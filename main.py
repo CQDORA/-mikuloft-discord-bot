@@ -14,6 +14,9 @@ ZAPIER_WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/27124366/u7mjszn/"
 intents = discord.Intents.default()
 intents.members = True 
 intents.invites = True
+intents.message_content = True  # <--- 新增这一行，允许机器人读取消息内容
+# 如果你之前在网页端也开了 Presence Intent，建议也加上下面这行：
+# intents.presences = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 # 内存缓存
