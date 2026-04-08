@@ -44,7 +44,7 @@ async def generate_invite_logic(email):
     return invite.url
 
 def run():
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 8080)))
 
 # --- Discord 机器人：监测入群 ---
 @bot.event
